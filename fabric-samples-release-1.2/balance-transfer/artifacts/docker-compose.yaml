@@ -71,9 +71,7 @@ services:
       file:   base.yaml
       service: peer-base
     environment:
-      - CORE_PEER_ID=peer0.org1.example.com
-      - CORE_PEER_GOSSIP_BOOTSTRAP=peer1.org1.example.com:7051
-      - CORE_PEER_GOSSIP_EXTERNALENDPOINT=peer0.org1.example.com:7051
+      - CORE_PEER_ID=peer0.org1.example.com      
       - CORE_PEER_LOCALMSPID=Org1MSP
       - CORE_PEER_ADDRESS=peer0.org1.example.com:7051
     ports:
@@ -91,6 +89,7 @@ services:
       service: peer-base
     environment:
       - CORE_PEER_ID=peer1.org1.example.com
+      - CORE_PEER_GOSSIP_BOOTSTRAP=peer0.org1.example.com:7051
       - CORE_PEER_LOCALMSPID=Org1MSP
       - CORE_PEER_ADDRESS=peer1.org1.example.com:7051
     ports:
@@ -107,7 +106,7 @@ services:
       file:   base.yaml
       service: peer-base
     environment:
-      - CORE_PEER_ID=peer0.org2.example.com
+      - CORE_PEER_ID=peer0.org2.example.com      
       - CORE_PEER_LOCALMSPID=Org2MSP
       - CORE_PEER_ADDRESS=peer0.org2.example.com:7051
     ports:
@@ -125,6 +124,7 @@ services:
       service: peer-base
     environment:
       - CORE_PEER_ID=peer1.org2.example.com
+      - CORE_PEER_GOSSIP_BOOTSTRAP=peer0.org2.example.com:7051
       - CORE_PEER_LOCALMSPID=Org2MSP
       - CORE_PEER_ADDRESS=peer1.org2.example.com:7051
     ports:
