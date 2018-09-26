@@ -68,6 +68,9 @@ channels:
         # Default: true
         eventSource: true
 
+        # bravobardo - using discover parameter to check if it is the source of error
+        discover: true
+
       peer1.org1.example.com:
         endorsingPeer: false
         chaincodeQuery: true
